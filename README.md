@@ -40,16 +40,16 @@ self.pop = [SCBasicPop showPopOnTargetView:UIApplication.sharedApplication.keyWi
 // create pop without maskColor setting by block style.
 __block typeof(self) weakSelf = self;
 self.pop = [SCBasicPop showPopOnTargetView:UIApplication.sharedApplication.keyWindow showCompleted:^(BOOL finished) {
-if (finished) {
-NSLog(@"Show Animation Finished");
-}
+    if (finished) {
+        NSLog(@"Show Animation Finished");
+    }
 } dismissCompleted:^(BOOL finished) {
-if (finished) {
-NSLog(@"Dismiss Animation Finished");;
+    if (finished) {
+        NSLog(@"Dismiss Animation Finished");;
 
-[weakSelf.pop removeFromSuperview];
-weakSelf.pop = nil;
-}
+        [weakSelf.pop removeFromSuperview];
+        weakSelf.pop = nil;
+    }
 }];
 ```
 
@@ -57,16 +57,16 @@ weakSelf.pop = nil;
 // create pop with maskColor setting by block style.
 __block typeof(self) weakSelf = self;
 self.pop = [SCBasicPop showPopOnTargetView:UIApplication.sharedApplication.keyWindow maskColor:[UIColor colorWithWhite:0 alpha:0.3] showCompleted:^(BOOL finished) {
-if (finished) {
-NSLog(@"Show Animation Finished");
-}
+    if (finished) {
+        NSLog(@"Show Animation Finished");
+    }
 } dismissCompleted:^(BOOL finished) {
-if (finished) {
-NSLog(@"Dismiss Animation Finished");;
+    if (finished) {
+        NSLog(@"Dismiss Animation Finished");;
 
-[weakSelf.pop removeFromSuperview];
-weakSelf.pop = nil;
-}
+        [weakSelf.pop removeFromSuperview];
+        weakSelf.pop = nil;
+    }
 }];
 ```
 set bounces
@@ -85,18 +85,18 @@ You can observe animations finished by block like this:
 ```  objective-c
 __block typeof(self) weakSelf = self;
 self.pop.showCompleted = ^(BOOL finished) {
-if (finished) {
-NSLog(@"Show Animation Finished");
-}
+    if (finished) {
+        NSLog(@"Show Animation Finished");
+    }
 };
 
 self.pop.dismissCompleted = ^(BOOL finished) {
-if (finished) {
-NSLog(@"Dismiss Animation Finished");;
+    if (finished) {
+        NSLog(@"Dismiss Animation Finished");;
 
-[weakSelf.pop removeFromSuperview];
-weakSelf.pop = nil;
-}
+        [weakSelf.pop removeFromSuperview];
+        weakSelf.pop = nil;
+    }
 };
 ```
 
