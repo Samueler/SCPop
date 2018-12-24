@@ -11,6 +11,9 @@
 
 #define SCPop_defaultMaskColor [UIColor colorWithWhite:0 alpha:0.5]
 
+static NSString *const KSCPopShowAniationKey = @"sc_popShowKey";
+static NSString *const KSCPopDismissAniationKey = @"sc_popDismissKey";
+
 @interface SCPop () <CAAnimationDelegate>
 
 @property (nonatomic, strong) SCPopScrollView *scrollView;
@@ -25,26 +28,6 @@
 
 #pragma mark - Initializaiton Functions
 
-+ (instancetype)showPopOnTargetView:(UIView *)targetView {
-    return [self showPopOnTargetView:targetView maskColor:SCPop_defaultMaskColor];
-}
-
-+ (instancetype)showPopOnTargetView:(UIView *)targetView maskColor:(UIColor *)maskColor {
-    
-    if (!targetView) {
-        return nil;
-    }
-    
-    if (!maskColor) {
-        maskColor = SCPop_defaultMaskColor;
-    }
-    
-    SCPop *pop = [[self alloc] initWithFrame:targetView.bounds];
-    pop.backgroundColor = maskColor;
-    [targetView addSubview:pop];
-    return pop;
-}
-
 + (instancetype)showPopOnTargetView:(UIView *)targetView
                       showCompleted:(SCPopAnimationCompleted)showCompleted
                    dismissCompleted:(SCPopAnimationCompleted)dismissCompleted {
@@ -58,6 +41,27 @@
     SCPop *pop = [self showPopOnTargetView:targetView maskColor:maskColor];
     pop.showCompleted = [showCompleted copy];
     pop.dismissCompleted = [dismissCompleted copy];
+    return pop;
+}
+
++ (instancetype)showPopOnTargetView:(UIView *)targetView {
+    return [self showPopOnTargetView:targetView maskColor:SCPop_defaultMaskColor];
+}
+
++ (instancetype)showPopOnTargetView:(UIView *)targetView
+                          maskColor:(UIColor *)maskColor {
+    
+    if (!targetView) {
+        return nil;
+    }
+    
+    if (!maskColor) {
+        maskColor = SCPop_defaultMaskColor;
+    }
+    
+    SCPop *pop = [[self alloc] initWithFrame:targetView.bounds];
+    pop.backgroundColor = maskColor;
+    [targetView addSubview:pop];
     return pop;
 }
 
@@ -120,9 +124,9 @@
 - (void)sc_contentShowAnimation {
     [self.contentView.layer removeAllAnimations];
     self.innerShowAnimation = [self sc_popShowAnimation];
-//    self.innerShowAnimation.delegate = self;
     if (self.innerShowAnimation) {
-        [self.contentView.layer addAnimation:self.innerShowAnimation forKey:@"sc_popShow"];
+        self.innerShowAnimation.delegate = self;
+        [self.contentView.layer addAnimation:self.innerShowAnimation forKey:KSCPopShowAniationKey];
         return;
     }
     
@@ -133,7 +137,8 @@
     [self.contentView.layer removeAllAnimations];
     self.innerDismissAnimation = [self sc_popDismissAnimation];
     if (self.innerDismissAnimation) {
-        [self.contentView.layer addAnimation:self.innerDismissAnimation forKey:@"sc_popDismiss"];
+        self.innerDismissAnimation.delegate = self;
+        [self.contentView.layer addAnimation:self.innerDismissAnimation forKey:KSCPopDismissAniationKey];
         return;
     }
     
@@ -163,12 +168,24 @@
 #pragma mark - CAAnimationDelegate
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    if ([anim isEqual:self.innerShowAnimation]) {
+    
+    NSArray<NSString *> *animationKeys = self.contentView.layer.animationKeys;
+    if ([animationKeys.firstObject isEqualToString:KSCPopShowAniationKey]) {
         if (self.showCompleted) {
+            // avoid objc doesn't release.
+            self.innerShowAnimation.delegate =  nil;
+            
             self.showCompleted(flag);
         }
-    } else if ([anim isEqual:self.innerDismissAnimation]) {
+    }
+    
+    if ([animationKeys.firstObject isEqualToString:KSCPopDismissAniationKey]) {
         if (self.dismissCompleted) {
+            
+            // avoid objc doesn't release.
+            self.innerDismissAnimation.delegate = nil;
+            [self.contentView.layer removeAllAnimations];
+            
             self.dismissCompleted(flag);
         }
     }

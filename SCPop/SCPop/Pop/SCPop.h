@@ -13,13 +13,19 @@ typedef void(^SCPopAnimationCompleted)(BOOL finished);
 
 @interface SCPop : UIView <SCPopProtocol>
 
++ (instancetype)showPopOnTargetView:(UIView *)targetView
+                      showCompleted:(SCPopAnimationCompleted)showCompleted
+                   dismissCompleted:(SCPopAnimationCompleted)dismissCompleted;
+
++ (instancetype)showPopOnTargetView:(UIView *)targetView
+                          maskColor:(UIColor *)maskColor
+                      showCompleted:(SCPopAnimationCompleted)showCompleted 
+                   dismissCompleted:(SCPopAnimationCompleted)dismissCompleted;
+
 + (instancetype)showPopOnTargetView:(UIView *)targetView;
 
-+ (instancetype)showPopOnTargetView:(UIView *)targetView maskColor:(UIColor *)maskColor;
-
-+ (instancetype)showPopOnTargetView:(UIView *)targetView showCompleted:(SCPopAnimationCompleted)showCompleted dismissCompleted:(SCPopAnimationCompleted)dismissCompleted;
-
-+ (instancetype)showPopOnTargetView:(UIView *)targetView maskColor:(UIColor *)maskColor showCompleted:(SCPopAnimationCompleted)showCompleted dismissCompleted:(SCPopAnimationCompleted)dismissCompleted;
++ (instancetype)showPopOnTargetView:(UIView *)targetView
+                          maskColor:(UIColor *)maskColor;
 
 /**
  Like UIScrollView's bounces property.

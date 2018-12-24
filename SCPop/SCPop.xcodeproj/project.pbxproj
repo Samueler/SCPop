@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6657180121CB48E500E6D925 /* SCDefaultAnimaitonPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 6657180021CB48E500E6D925 /* SCDefaultAnimaitonPop.m */; };
 		6657180421CB4D7E00E6D925 /* SCPopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6657180321CB4D7E00E6D925 /* SCPopScrollView.m */; };
 		66D56C3F21CB370200BCE81B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D56C3E21CB370200BCE81B /* AppDelegate.m */; };
 		66D56C4221CB370200BCE81B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D56C4121CB370200BCE81B /* ViewController.m */; };
@@ -18,6 +17,10 @@
 		66D56C5721CB370400BCE81B /* SCPopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D56C5621CB370400BCE81B /* SCPopTests.m */; };
 		66D56C6221CB370400BCE81B /* SCPopUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D56C6121CB370400BCE81B /* SCPopUITests.m */; };
 		66D56C7821CB38C700BCE81B /* SCPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D56C7721CB38C700BCE81B /* SCPop.m */; };
+		F7A92E1821D0BF5000EAA1C8 /* SCBasicPop.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A92E1721D0BF5000EAA1C8 /* SCBasicPop.m */; };
+		F7A92E1B21D0BF5E00EAA1C8 /* SCCAAnimationPop.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A92E1A21D0BF5E00EAA1C8 /* SCCAAnimationPop.m */; };
+		F7A92E1E21D0C19700EAA1C8 /* SCBasicUsageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A92E1D21D0C19700EAA1C8 /* SCBasicUsageVC.m */; };
+		F7A92E2121D0C1B100EAA1C8 /* SCCustomAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A92E2021D0C1B100EAA1C8 /* SCCustomAnimationVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		665717FF21CB48E500E6D925 /* SCDefaultAnimaitonPop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCDefaultAnimaitonPop.h; sourceTree = "<group>"; };
-		6657180021CB48E500E6D925 /* SCDefaultAnimaitonPop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCDefaultAnimaitonPop.m; sourceTree = "<group>"; };
 		6657180221CB4D7E00E6D925 /* SCPopScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCPopScrollView.h; sourceTree = "<group>"; };
 		6657180321CB4D7E00E6D925 /* SCPopScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCPopScrollView.m; sourceTree = "<group>"; };
 		66D56C3A21CB370200BCE81B /* SCPop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCPop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +62,14 @@
 		66D56C7321CB37CF00BCE81B /* SCPopProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCPopProtocol.h; sourceTree = "<group>"; };
 		66D56C7621CB38C700BCE81B /* SCPop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCPop.h; sourceTree = "<group>"; };
 		66D56C7721CB38C700BCE81B /* SCPop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCPop.m; sourceTree = "<group>"; };
+		F7A92E1621D0BF5000EAA1C8 /* SCBasicPop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCBasicPop.h; sourceTree = "<group>"; };
+		F7A92E1721D0BF5000EAA1C8 /* SCBasicPop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCBasicPop.m; sourceTree = "<group>"; };
+		F7A92E1921D0BF5E00EAA1C8 /* SCCAAnimationPop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCCAAnimationPop.h; sourceTree = "<group>"; };
+		F7A92E1A21D0BF5E00EAA1C8 /* SCCAAnimationPop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCCAAnimationPop.m; sourceTree = "<group>"; };
+		F7A92E1C21D0C19700EAA1C8 /* SCBasicUsageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCBasicUsageVC.h; sourceTree = "<group>"; };
+		F7A92E1D21D0C19700EAA1C8 /* SCBasicUsageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCBasicUsageVC.m; sourceTree = "<group>"; };
+		F7A92E1F21D0C1B100EAA1C8 /* SCCustomAnimationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCCustomAnimationVC.h; sourceTree = "<group>"; };
+		F7A92E2021D0C1B100EAA1C8 /* SCCustomAnimationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCCustomAnimationVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +100,10 @@
 		665717FE21CB48BC00E6D925 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				665717FF21CB48E500E6D925 /* SCDefaultAnimaitonPop.h */,
-				6657180021CB48E500E6D925 /* SCDefaultAnimaitonPop.m */,
+				F7A92E1621D0BF5000EAA1C8 /* SCBasicPop.h */,
+				F7A92E1721D0BF5000EAA1C8 /* SCBasicPop.m */,
+				F7A92E1921D0BF5E00EAA1C8 /* SCCAAnimationPop.h */,
+				F7A92E1A21D0BF5E00EAA1C8 /* SCCAAnimationPop.m */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -120,10 +131,10 @@
 		66D56C3C21CB370200BCE81B /* SCPop */ = {
 			isa = PBXGroup;
 			children = (
-				665717FE21CB48BC00E6D925 /* Examples */,
 				66D56C3D21CB370200BCE81B /* AppDelegate.h */,
 				66D56C3E21CB370200BCE81B /* AppDelegate.m */,
 				66D56C6F21CB370B00BCE81B /* Pop */,
+				665717FE21CB48BC00E6D925 /* Examples */,
 				66D56C7021CB371600BCE81B /* Controllers */,
 				66D56C7121CB372600BCE81B /* Storyboards */,
 				66D56C7221CB373600BCE81B /* Resources */,
@@ -166,6 +177,10 @@
 			children = (
 				66D56C4021CB370200BCE81B /* ViewController.h */,
 				66D56C4121CB370200BCE81B /* ViewController.m */,
+				F7A92E1C21D0C19700EAA1C8 /* SCBasicUsageVC.h */,
+				F7A92E1D21D0C19700EAA1C8 /* SCBasicUsageVC.m */,
+				F7A92E1F21D0C1B100EAA1C8 /* SCCustomAnimationVC.h */,
+				F7A92E2021D0C1B100EAA1C8 /* SCCustomAnimationVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -259,6 +274,7 @@
 		66D56C3221CB370200BCE81B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SC;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Samueler;
 				TargetAttributes = {
@@ -327,11 +343,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6657180121CB48E500E6D925 /* SCDefaultAnimaitonPop.m in Sources */,
+				F7A92E1821D0BF5000EAA1C8 /* SCBasicPop.m in Sources */,
+				F7A92E1E21D0C19700EAA1C8 /* SCBasicUsageVC.m in Sources */,
+				F7A92E2121D0C1B100EAA1C8 /* SCCustomAnimationVC.m in Sources */,
 				6657180421CB4D7E00E6D925 /* SCPopScrollView.m in Sources */,
 				66D56C4221CB370200BCE81B /* ViewController.m in Sources */,
 				66D56C4D21CB370400BCE81B /* main.m in Sources */,
 				66D56C3F21CB370200BCE81B /* AppDelegate.m in Sources */,
+				F7A92E1B21D0BF5E00EAA1C8 /* SCCAAnimationPop.m in Sources */,
 				66D56C7821CB38C700BCE81B /* SCPop.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
