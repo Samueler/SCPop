@@ -12,7 +12,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
-    BOOL touchOnContent = [touch.view isEqual:self.contentView];
+    BOOL touchOnContent = CGRectContainsPoint(self.contentView.frame, [touch locationInView:self]);
     if (self.touchOnContent) {
         self.touchOnContent(touchOnContent);
     }
