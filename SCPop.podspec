@@ -7,6 +7,6 @@ Pod::Spec.new do |s|
     s.author             = { "Samueler" => "Samueler.chen@gmail.com" }
     s.platform     = :ios, "8.0"
     s.source       = { :git => "https://github.com/Samueler/SCPop.git", :tag => "1.0.0" }
-    s.source_files  = "SCPop/Pop/**/*.{h,m}"
+    s.source_files  = "SCPop/SCPop/**/*{h,m}"
 
 end

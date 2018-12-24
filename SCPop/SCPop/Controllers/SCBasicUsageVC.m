@@ -77,6 +77,7 @@
         }
     }];
     self.pop.touchDismiss = YES;
+    self.pop.bounces = YES;
 }
 
 - (void)blockShowWithMaskColor {
